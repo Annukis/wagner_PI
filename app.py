@@ -3,6 +3,7 @@ Projeto Integrador - Desenvolvimento Low Code em Ciência de Dados
 Dashboard de Análise do Catálogo da Netflix
 """
 
+import os
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -21,18 +22,41 @@ st.set_page_config(
 # ============================================================
 # CARREGAMENTO E PREPARAÇÃO DOS DADOS
 # ============================================================
+# URLs públicas que servem o dataset Netflix Titles (Kaggle, shivamb).
+# A função tenta carregar a primeira que funcionar.
+FONTES_DADOS = [
+    "https://cdn.jsdelivr.net/gh/allenkong221/netflix-titles-dataset@main/netflix_titles.csv",
+    "https://cdn.jsdelivr.net/gh/lijesh010/Netflix_dataset_Exploratory_Data_Analysis_Python_Project@main/netflix_titles.csv",
+    "https://raw.githubusercontent.com/allenkong221/netflix-titles-dataset/main/netflix_titles.csv",
+]
+
 @st.cache_data
 def carregar_dados():
     """Carrega e prepara o dataset da Netflix.
 
-    Transformações aplicadas:
-    - Leitura do arquivo CSV
-    - Conversão da coluna date_added para datetime
-    - Extração do ano e mês de adição
-    - Tratamento de valores nulos
-    - Padronização de strings
+    Tenta primeiro um arquivo local 'netflix_titles.csv'. Se não existir,
+    busca em fontes públicas conhecidas. O resultado é cacheado pelo Streamlit.
     """
-    df = pd.read_csv("netflix_titles.csv")
+    df = None
+
+    # 1. tenta carregar arquivo local
+    if os.path.exists("netflix_titles.csv"):
+        df = pd.read_csv("netflix_titles.csv")
+
+    # 2. caso não exista, tenta as fontes públicas
+    if df is None:
+        for url in FONTES_DADOS:
+            try:
+                df = pd.read_csv(url)
+                break
+            except Exception:
+                continue
+
+    if df is None:
+        raise RuntimeError(
+            "Não foi possível carregar o dataset. "
+            "Verifique a conexão ou disponibilize o arquivo netflix_titles.csv localmente."
+        )
 
     # Tratamento de nulos nas colunas categóricas
     df["country"] = df["country"].fillna("Não informado")
@@ -52,12 +76,8 @@ def carregar_dados():
 
 try:
     df = carregar_dados()
-except FileNotFoundError:
-    st.error(
-        "❌ Arquivo `netflix_titles.csv` não encontrado. "
-        "Baixe o dataset em https://www.kaggle.com/datasets/shivamb/netflix-shows "
-        "e coloque na mesma pasta do app."
-    )
+except Exception as erro:
+    st.error(f"❌ Erro ao carregar dataset: {erro}")
     st.stop()
 
 # ============================================================
