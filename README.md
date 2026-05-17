@@ -44,7 +44,7 @@ A aplicação abrirá no navegador em `http://localhost:8501`.
 
 # Publicação no Streamlit Community Cloud
 
-A aplicação está publicada em: `https://<seu-usuario>-pi-netflix.streamlit.app`
+A aplicação está publicada em: `https://<annukis>-pi-netflix.streamlit.app`
 
 # Autor
 
