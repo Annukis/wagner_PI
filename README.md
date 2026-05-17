@@ -6,7 +6,7 @@ Aplicação **low code** desenvolvida em **Streamlit** como parte do Projeto Int
 
 Permitir a análise interativa do catálogo da Netflix, com indicadores sobre filmes, séries, países produtores, classificações indicativas, evolução do catálogo ao longo dos anos e gêneros mais frequentes.
 
-# Tecnologias utilizadas
+# Ferramentas 
 
 - **Python 3.10+**
 - **Streamlit** — framework low code para construção da interface web
