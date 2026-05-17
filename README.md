@@ -1,19 +1,19 @@
-# 🎬 Dashboard de Análise do Catálogo da Netflix
+# Dashboard de Análise do Catálogo da Netflix
 
 Aplicação **low code** desenvolvida em **Streamlit** como parte do Projeto Integrador do 2º semestre do curso de Tecnologia em Ciência de Dados — Senac EAD.
 
-## 📌 Objetivo
+# Objetivo
 
 Permitir a análise interativa do catálogo da Netflix, com indicadores sobre filmes, séries, países produtores, classificações indicativas, evolução do catálogo ao longo dos anos e gêneros mais frequentes.
 
-## 🛠️ Tecnologias utilizadas
+# Tecnologias utilizadas
 
 - **Python 3.10+**
 - **Streamlit** — framework low code para construção da interface web
 - **Pandas** — manipulação e transformação dos dados
 - **Plotly Express** — visualizações interativas
 
-## 📂 Estrutura do projeto
+# Estrutura do projeto
 
 ```
 pi_netflix/
@@ -23,7 +23,7 @@ pi_netflix/
 └── README.md              # Este arquivo
 ```
 
-## ▶️ Como executar localmente
+# Como executar localmente
 
 1. Clonar o repositório
    ```bash
@@ -42,11 +42,11 @@ pi_netflix/
 
 A aplicação abrirá no navegador em `http://localhost:8501`.
 
-## 🚀 Publicação no Streamlit Community Cloud
+# Publicação no Streamlit Community Cloud
 
 A aplicação está publicada em: `https://<seu-usuario>-pi-netflix.streamlit.app`
 
-## 👤 Autora
+# Autora
 
-Projeto desenvolvido por **[SEU NOME]** — Senac EAD, 2026.
+Projeto desenvolvido por **Wagner R De Souza** — Senac EAD, 2026.
 [README.md](https://github.com/user-attachments/files/27863141/README.md)
