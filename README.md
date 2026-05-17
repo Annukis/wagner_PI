@@ -46,7 +46,7 @@ A aplicação abrirá no navegador em `http://localhost:8501`.
 
 A aplicação está publicada em: `https://<seu-usuario>-pi-netflix.streamlit.app`
 
-# Autora
+# Autor
 
 Projeto desenvolvido por **Wagner R De Souza** — Senac EAD, 2026.
 [README.md](https://github.com/user-attachments/files/27863141/README.md)
