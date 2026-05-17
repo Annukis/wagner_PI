@@ -1,6 +1,6 @@
 # Dashboard de Análise do Catálogo da Netflix
 
-Aplicação **low code** desenvolvida em **Streamlit** como parte do Projeto Integrador do 2º semestre do curso de Tecnologia em Ciência de Dados — Senac EAD.
+Aplicação **low code** desenvolvida em **Streamlit** como parte do Projeto Integrador do 2º semestre do curso de Analise e Desenvolvimento de Sistemas — Senac EAD.
 
 # Objetivo
 
